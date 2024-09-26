@@ -4,8 +4,8 @@ import { TodoItem } from "./components/TodoItem/TodoItem";
 
 function App() {
   const todos = [
-    { name: "Zaplacic rachunki", done: false },
-    { name: "Wyrzucic smieci", done: true },
+    { name: "Zaplacic rachunki", done: false, id: 1 },
+    { name: "Wyrzucic smieci", done: true, id: 2 },
   ];
 
   return (
@@ -19,8 +19,11 @@ function App() {
       </header>
       <Form />
       <ul>
-        <TodoItem name="Zaplacic rachunki" done={true} />
-        <TodoItem name="Wyrzucic smieci" done={false} />
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} name={todo.name} done={todo.done} />
+        ))}
+        {/* <TodoItem name="Zaplacic rachunki" done={true} />
+        <TodoItem name="Wyrzucic smieci" done={false} /> */}
       </ul>
     </div>
   );

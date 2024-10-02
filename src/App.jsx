@@ -2,9 +2,26 @@ import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
 
+function getSubheading(numberoftask) {
+  switch (true) {
+    case numberoftask > 4:
+      return `${numberoftask} zadań`;
+    case numberoftask > 1:
+      return `${numberoftask} zadania`;
+    case numberoftask === 1:
+      return `1 zadanie`;
+    case numberoftask === 0:
+    default:
+      return `Brak zadań`;
+  }
+}
+
 function App() {
   const todos = [
     { name: "Zaplacic rachunki", done: false, id: 1 },
+    { name: "Wyrzucic smieci", done: true, id: 2 },
+    { name: "Wyrzucic smieci", done: true, id: 2 },
+    { name: "Wyrzucic smieci", done: true, id: 2 },
     { name: "Wyrzucic smieci", done: true, id: 2 },
   ];
 
@@ -13,7 +30,7 @@ function App() {
       <header className={styles.header}>
         <div>
           <h1>Do zrobienia</h1>
-          <h2>5 zadan</h2>
+          <h2>{getSubheading(todos.length)}</h2>
         </div>
         <button className={styles.button}>+</button>
       </header>

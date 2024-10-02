@@ -20,9 +20,9 @@ function App() {
   const todos = [
     { name: "Zaplacic rachunki", done: false, id: 1 },
     { name: "Wyrzucic smieci", done: true, id: 2 },
-    { name: "Wyrzucic smieci", done: true, id: 2 },
-    { name: "Wyrzucic smieci", done: true, id: 2 },
-    { name: "Wyrzucic smieci", done: true, id: 2 },
+    { name: "Wyrzucic smieci", done: true, id: 3 },
+    { name: "Wyrzucic smieci", done: true, id: 4 },
+    { name: "Wyrzucic smieci", done: true, id: 5 },
   ];
 
   return (

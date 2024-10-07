@@ -22,9 +22,14 @@ function App() {
           <h1>Do zrobienia</h1>
           <h2>{getSubheading(todos.length)}</h2>
         </div>
-        <button onClick={() => setIsformShown(true)} className={styles.button}>
-          +
-        </button>
+        {!isFormShown && (
+          <button
+            onClick={() => setIsformShown(true)}
+            className={styles.button}
+          >
+            +
+          </button>
+        )}
       </header>
       {isFormShown && <Form />}
       <ul>

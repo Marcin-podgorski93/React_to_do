@@ -31,7 +31,13 @@ function App() {
           </button>
         )}
       </header>
-      {isFormShown && <Form />}
+      {isFormShown && (
+        <Form
+          onFormSubmit={(NewTodosList) => {
+            alert(NewTodosList);
+          }}
+        />
+      )}
       <ul>
         {todos.map((todo) => (
           <TodoItem key={todo.id} name={todo.name} done={todo.done} />

@@ -2,20 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
-
-function getSubheading(numberoftask) {
-  switch (true) {
-    case numberoftask > 4:
-      return `${numberoftask} zadań`;
-    case numberoftask > 1:
-      return `${numberoftask} zadania`;
-    case numberoftask === 1:
-      return `1 zadanie`;
-    case numberoftask === 0:
-    default:
-      return `Brak zadań`;
-  }
-}
+import { getSubheading } from "../utils/getSubheading";
 
 function App() {
   const [isFormShown, setIsformShown] = useState(false);

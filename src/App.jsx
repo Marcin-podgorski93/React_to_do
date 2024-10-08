@@ -34,7 +34,11 @@ function App() {
       {isFormShown && (
         <Form
           onFormSubmit={(NewTodosList) => {
-            alert(NewTodosList);
+            setTodo((prevTodo) => [
+              ...prevTodo,
+              { name: NewTodosList, done: false, id: prevTodo.length + 1 },
+            ]);
+            setIsformShown(false);
           }}
         />
       )}

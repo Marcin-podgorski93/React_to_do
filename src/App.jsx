@@ -48,7 +48,11 @@ function App() {
             key={todo.id}
             name={todo.name}
             done={todo.done}
-            onDeleteButtonClick={() => alert("usuniety")}
+            onDeleteButtonClick={() => {
+              setTodo((prevTodo) =>
+                prevTodo.filter((todos) => todos.id !== todo.id)
+              );
+            }}
           />
         ))}
         {/* <TodoItem name="Zaplacic rachunki" done={true} />

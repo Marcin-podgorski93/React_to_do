@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button";
 import styles from "./TodoItem.module.css";
 
-export function TodoItem({ name, done }) {
+export function TodoItem({ name, done, onDeleteButtonClick }) {
   function check(e) {
     console.log(e);
   }
@@ -12,7 +12,7 @@ export function TodoItem({ name, done }) {
         {name}
       </span>
       {!done && <Button onClick={check}>Zrobione</Button>}
-      <Button>Usuń</Button>
+      <Button onClick={onDeleteButtonClick}>Usuń</Button>
     </li>
   );
 }

@@ -44,7 +44,12 @@ function App() {
       )}
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} name={todo.name} done={todo.done} />
+          <TodoItem
+            key={todo.id}
+            name={todo.name}
+            done={todo.done}
+            onDeleteButtonClick={() => alert("usuniety")}
+          />
         ))}
         {/* <TodoItem name="Zaplacic rachunki" done={true} />
         <TodoItem name="Wyrzucic smieci" done={false} /> */}

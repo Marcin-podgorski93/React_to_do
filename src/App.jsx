@@ -59,6 +59,9 @@ function App() {
                 prevTodo.filter((todos) => todos.id !== todo.id)
               );
             }}
+            onDoneButtonClick={() => {
+              alert("Zrobione");
+            }}
           />
         ))}
         {/* <TodoItem name="Zaplacic rachunki" done={true} />

@@ -1,17 +1,22 @@
 import { Button } from "../Button/Button";
 import styles from "./TodoItem.module.css";
 
-export function TodoItem({ name, done, onDeleteButtonClick }) {
-  function check(e) {
-    console.log(e);
-  }
+export function TodoItem({
+  name,
+  done,
+  onDeleteButtonClick,
+  onDoneButtonClick,
+}) {
+  // function check(e) {
+  //   console.log(e);
+  // }
 
   return (
     <li className={styles.item}>
       <span className={`${styles.name} ${done ? styles.done : ""}`}>
         {name}
       </span>
-      {!done && <Button onClick={check}>Zrobione</Button>}
+      {!done && <Button onClick={onDoneButtonClick}>Zrobione</Button>}
       <Button onClick={onDeleteButtonClick}>Usuń</Button>
     </li>
   );

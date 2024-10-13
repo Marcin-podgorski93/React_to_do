@@ -15,6 +15,11 @@ function App() {
     { name: "Wyrzucic smieci", done: true, id: 5 },
   ]);
 
+  console.log(
+    "Aktualna lista todos:",
+    todos.map((todo) => todo.id)
+  );
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -49,6 +54,7 @@ function App() {
             name={todo.name}
             done={todo.done}
             onDeleteButtonClick={() => {
+              console.log("Nacisnięto usuń dla id:", todo.id);
               setTodo((prevTodo) =>
                 prevTodo.filter((todos) => todos.id !== todo.id)
               );

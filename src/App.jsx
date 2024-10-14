@@ -60,7 +60,17 @@ function App() {
               );
             }}
             onDoneButtonClick={() => {
-              alert("Zrobione");
+              setTodo((prevTodo) =>
+                prevTodo.map((todos) => {
+                  if (todos.id !== todo.id) {
+                    return todos;
+                  }
+                  return {
+                    ...todos,
+                    done: true,
+                  };
+                })
+              );
             }}
           />
         ))}

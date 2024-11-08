@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
 import { getSubheading } from "../utils/getSubheading";
+import { Button } from "./components/Button/Button";
 
 function App() {
   const [isFormShown, setIsformShown] = useState(false);
@@ -77,6 +78,11 @@ function App() {
         {/* <TodoItem name="Zaplacic rachunki" done={true} />
         <TodoItem name="Wyrzucic smieci" done={false} /> */}
       </ul>
+      <div>
+        <header className={styles.loading}>
+          <Button>Zaladuje</Button>
+        </header>
+      </div>
     </div>
   );
 }

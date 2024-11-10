@@ -16,6 +16,27 @@ function App() {
     { name: "Wyrzucic smieci", done: true, id: 5 },
   ]);
 
+  const [data, setData] = useState([
+    {
+      id: 1,
+      word: "kot",
+      translation: "cat",
+      category: "noun",
+    },
+    {
+      id: 2,
+      word: "pies",
+      translation: "dog",
+      category: "noun",
+    },
+    {
+      id: 3,
+      word: "skakać",
+      translation: "jump",
+      category: "verb",
+    },
+  ]);
+
   console.log(
     "Aktualna lista todos:",
     todos.map((todo) => todo.id)
@@ -80,7 +101,25 @@ function App() {
       </ul>
       <div>
         <header className={styles.loading}>
-          <Button>Zaladuje</Button>
+          <Button>Zaladuje dane</Button>
+          <section className={styles.section}>
+            <ul className={styles.list}>
+              {data.map((words) => (
+                <li className={styles.li} key={words.key}>
+                  <span className={styles.word}>
+                    (PL) <strong>{words.word}</strong>
+                  </span>
+                  <span className={styles.word}>
+                    (ANG) <strong>{words.translation}</strong>
+                  </span>
+                  <div className={styles.buttons}>
+                    <button>👁️</button>
+                    <button>✔️</button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
         </header>
       </div>
     </div>

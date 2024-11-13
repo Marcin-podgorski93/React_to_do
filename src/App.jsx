@@ -113,8 +113,8 @@ function App() {
                     (ANG) <strong>{words.translation}</strong>
                   </span>
                   <div className={styles.buttons}>
-                    <button>👁️</button>
-                    <button>✔️</button>
+                    <button className={styles.emoticon}>👁️</button>
+                    <button className={styles.emoticon}>✔️</button>
                   </div>
                 </li>
               ))}

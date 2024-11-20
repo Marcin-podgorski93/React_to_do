@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
-import { getSubheading } from "../../utils/getSubheading";
 import { Button } from "./components/Button/Button";
 
 function App() {
@@ -47,7 +46,6 @@ function App() {
       <header className={styles.header}>
         <div>
           <h1>Do zrobienia</h1>
-          <h2>{getSubheading(todos.length)}</h2>
         </div>
         {!isFormShown && (
           <button

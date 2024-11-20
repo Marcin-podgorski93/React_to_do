@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
-import { getSubheading } from "../utils/getSubheading";
+import { getSubheading } from "../../utils/getSubheading";
 import { Button } from "./components/Button/Button";
 
 function App() {
@@ -113,8 +113,8 @@ function App() {
                     (ANG) <strong>{words.translation}</strong>
                   </span>
                   <div className={styles.buttons}>
-                    <button>👁️</button>
-                    <button>✔️</button>
+                    <button className={styles.emoticon}>👁️</button>
+                    <button className={styles.emoticon}>✔️</button>
                   </div>
                 </li>
               ))}

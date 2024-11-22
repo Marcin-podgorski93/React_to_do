@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { TodoItem } from "./components/TodoItem/TodoItem";
 import { Button } from "./components/Button/Button";
+import { Form_Translate } from "./components/Form Translate/Form_translate";
 
 function App() {
   const [isFormShown, setIsformShown] = useState(false);
@@ -99,6 +100,7 @@ function App() {
       </ul>
       <div>
         <header className={styles.loading}>
+          <Form_Translate />
           <Button>Zaladuje dane</Button>
           <section className={styles.section}>
             <ul className={styles.list}>

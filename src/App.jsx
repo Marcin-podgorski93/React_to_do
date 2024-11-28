@@ -42,6 +42,10 @@ function App() {
     todos.map((todo) => todo.id)
   );
 
+  function handleFormSubmit(formData) {
+    console.log(formData);
+  }
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -100,7 +104,7 @@ function App() {
       </ul>
       <div>
         <header className={styles.loading}>
-          <Form_Translate />
+          <Form_Translate onFormSubmit={handleFormSubmit} />
           <Button>Zaladuje dane</Button>
           <section className={styles.section}>
             <ul className={styles.list}>

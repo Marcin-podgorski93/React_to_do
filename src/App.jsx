@@ -126,6 +126,20 @@ function App() {
           </section>
         </header>
       </div>
+      <div>
+        <form action="">
+          <div>
+            <h1>Dane osobowe</h1>
+          </div>
+          <div>
+            <input type="text" placeholder="Imie" />
+          </div>
+          <div>
+            <input type="radio" name="role" id="user" value="Uzytkownik" />
+            <label htmlFor="user">Uzytkownik</label>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -138,6 +138,14 @@ function App() {
             <input type="radio" name="role" id="user" value="Uzytkownik" />
             <label htmlFor="user">Uzytkownik</label>
           </div>
+          <div>
+            <input type="radio" name="role" id="moderator" value="Moderator" />
+            <label htmlFor="user">Moderator</label>
+          </div>
+          <div>
+            <input type="radio" name="role" id="admin" value="Administrator" />
+            <label htmlFor="admin">Administrator</label>
+          </div>
         </form>
       </div>
     </div>

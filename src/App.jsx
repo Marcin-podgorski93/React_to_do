@@ -187,8 +187,16 @@ function App() {
             />
             <label htmlFor="admin">Administrator</label>
           </div>
-          <button>Zapisz</button>
+          <button disabled={name.length === 0}>Zapisz</button>
         </form>
+        <div>
+          {person && (
+            <>
+              <h2>{person.name}</h2>
+              <p>{person.role}</p>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

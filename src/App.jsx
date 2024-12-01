@@ -8,6 +8,11 @@ import { Form_Translate } from "./components/Form Translate/Form_translate";
 function App() {
   const [isFormShown, setIsformShown] = useState(false);
 
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("Uzytkownik");
+
+  const [person, setPerson] = useState(null);
+
   const [todos, setTodo] = useState([
     { name: "Zaplacic rachunki", done: false, id: 1 },
     { name: "Wyrzucic smieci", done: true, id: 2 },
@@ -45,6 +50,16 @@ function App() {
   function handleFormSubmit(formData) {
     console.log(formData);
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setPerson({ name, role });
+    setName("");
+  }
+
+  console.log({ handleSubmit });
+  console.log(name);
+  console.log(role);
 
   return (
     <div className={styles.container}>
@@ -127,25 +142,52 @@ function App() {
         </header>
       </div>
       <div>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div>
             <h1>Dane osobowe</h1>
           </div>
           <div>
-            <input type="text" placeholder="Imie" />
+            <input
+              type="text"
+              placeholder="Imie"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div>
-            <input type="radio" name="role" id="user" value="Uzytkownik" />
+            <input
+              type="radio"
+              name="role"
+              id="user"
+              value="Uzytkownik"
+              checked={role === "Uzytkownik"}
+              onChange={(e) => setRole(e.target.value)}
+            />
             <label htmlFor="user">Uzytkownik</label>
           </div>
           <div>
-            <input type="radio" name="role" id="moderator" value="Moderator" />
+            <input
+              type="radio"
+              name="role"
+              id="moderator"
+              value="Moderator"
+              checked={role === "Moderator"}
+              onChange={(e) => setRole(e.target.value)}
+            />
             <label htmlFor="user">Moderator</label>
           </div>
           <div>
-            <input type="radio" name="role" id="admin" value="Administrator" />
+            <input
+              type="radio"
+              name="role"
+              id="admin"
+              value="Administrator"
+              checked={role === "Administrator"}
+              onChange={(e) => setRole(e.target.value)}
+            />
             <label htmlFor="admin">Administrator</label>
           </div>
+          <button>Zapisz</button>
         </form>
       </div>
     </div>
